@@ -1,4 +1,199 @@
 <!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>DartsXL Counter – Dartcounter & Checkout Analyzer</title><link rel=canonical href="https://dartsxl.com/"><meta name=description content="DartsXL Counter is a free online dartcounter with a checkout routes analyzer, fast scorekeeping, and four dartboards including the classic and DartsXL designs."><meta name=keywords content="dartsxl, counter, dartcounter, checkoutroutes"><meta property=og:title content="DartsXL Counter – Free Online Dartcounter"><meta property=og:description content="Dartcounter & checkout routes analyzer. Four dartboards. Works on all devices."><meta property=og:type content=website><meta property=og:url content="https://dartsxl.com/"><meta property=og:image content=img/preview.jpg><meta name=twitter:card content=summary_large_image><meta name=twitter:title content="DartsXL Counter – Free Online Dartcounter"><meta name=twitter:description content="Darts scorer. Advanced checkout routes mode. Four dartboards. Works on all devices."><meta name=twitter:image content=img/preview.jpg><link rel=stylesheet href=checkoutanalyzer/checkoutanalyzer.css><link rel=stylesheet href=dartcounterstyles.css><body><div id=infoImgBoardContainer aria-hidden=true><img id=infoImgBoardXLBoard class=infoImgBoard src=img/XLBoard-RealDartboard.jpg alt=XLBoard loading=lazy decoding=async> <img id=infoImgBoardHeptaboardOpen class=infoImgBoard src=img/Heptaboard_Open-RealDartboard.jpg alt="HeptaBoard Open" loading=lazy decoding=async> <img id=infoImgBoardHeptaboardFull class=infoImgBoard src=img/Heptaboard_Full-RealDartboard.jpg alt="HeptaBoard Full" loading=lazy decoding=async></div><div id=dartboard-container class=dartboard-container></div><div id=acceptScoreButtonContainerDivDiv class=acceptScoreButtonContainerClass><div id=acceptTotalScoreButtonDiv class=acceptScoreButtonClass>OK</div></div><div class=analyzerStatic></div><div id=matchInterfaceContainerOuterDiv class=matchInterfaceContainerOuterClass></div><div id=checkoutInfoOuterDiv class=checkoutInfoOuterClass></div><div id=startScreenOuterDiv class=startScreenOuterClass></div><div id=informationMessageDivOuter class=informationMessageOuterClass></div><div id=playerActionsContainer class=playerActionsContainerClass></div><div id=promptContainer class=promptContainerClass></div><div id=statsContainerDiv class=statsContainerClass><div class=playerStatsTableContainer></div><div class=gameInfoTableContainer></div><div class=logoDivContainer><div class=logoNotTopClass><img src=dartsXL-logo8-fixedTrim.png class=logoImg></div></div></div><div id=boardInterfaceDiv class=boardsInterfaceClass><div class=board-container><div id=boardsTabsDiv class=boards-tabs></div><div class=logoDivContainer><div class=logoNotTopClass><img src=dartsXL-logo8-fixedTrim.png class=logoImg></div></div></div></div><div id=gameSettingsPopupDivOuter></div><div id=settingsMenuPopupDivOuter></div><div id=bottomInterfaceDiv class=bottomInterfaceClass><div id=missedDartEleDiv class=missedDart-section><input id=missedDartEle class=missedDartEleClass value=Miss readonly></div><div id=bottomAfterMissDiv class=bottomAfterMissClass><div class=currentScoreAndCurrentDarts><div class=thrownDartInputsContainer></div><div id=totalAndCurrentScoreDiv><div id=totalScoreSectionDiv class=totalscore-section><div id=totalScoreArrowCont class=totalScoreArrowCont><div class=totalScoreArrowRotated>➞</div></div><div id=totalScore class=totalScoreClass><div id=totalScoreInner>501</div></div><div class=averageScoreHolder><div class=averageScoreLeftCont><span class=averageScoreMu></span></div><div class=averageScoreMiddleCont><div id=averageScoreEle class=averageScoreClass>0</div></div><div class=averageScoreRightCont></div></div></div><div class=currentscore-section><div id=currentScore class=currentScoreClass><input id=currentScoreInner value=0></div></div></div></div><div id=checkoutRoutesContainerDivOuter class=checkoutRoutesContainerClassOuter><div id=checkoutRoutesContainerDiv class=checkoutRoutesContainerClass><div id=checkoutRouteButtonsContainer class=checkoutRouteButtonsContainerOuterClass>TEST!</div><div class=checkoutRoutesInnerContainer><div id=optimalCheckoutDivOuter class=optimalCheckoutClassOuter><div id=optimalCheckoutDiv class="singleCheckoutRouteClass optimal"></div></div><div id=alternateCheckoutRoutesDivOuter class=alternateCheckoutRoutesClassOuter><div id=alternateCheckoutRoutesDiv class=alternateCheckoutRoutesClass><div class=alternateCheckoutRoutesNavigationTextsClassOuter><div class=alternateCheckoutRoutesNavigationTextsClass></div></div></div></div></div></div></div></div></div><div class=everythingInterfaceDiv><div id=topLeftInterfaceDiv class=topLeftInterfaceClass><div class=topRowContainer><div class=logoAndSelectBoard-section><div class=logoTopDivContainer><div id=logoTopDiv class=logoTopDivClass><div class=logoTopInner><img src=dartsXL-logo8-fixedTrim.png class=logoImg></div></div></div><div id=selectBoardDivContainer class=selectBoardDivContainerClass></div></div><div class=tabsAndCheckout-section><div class=tabsContainerDivOuterClass><div id=tabsAndAddTabDiv><div id=tabsContainerDiv></div><div class=add-tab>+</div></div></div></div></div></div><div class=undoAndCheckout-section><div class=undo-section><div id=undoEle class=undoEleClass></div></div><div id=checkout-sectionDiv class=checkout-section><div id=checkoutsholding class=checkoutsContainerClass><div id=checkoutsDiv class=checkoutsDivClass></div></div><div id=statusMessageDivOuter></div></div></div></div><script type=text/javascript src=bundle.js></script>
+
+
+
+
+
+<style>
+  #amz-overlay-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  #amz-overlay {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: min(540px, 90%);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    text-align: center;
+    position: relative;
+    font-family: system-ui, sans-serif;
+  }
+
+  #amz-overlay h2 {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+  }
+
+  #amz-overlay p {
+    margin: 0 0 16px;
+    color: #444;
+    font-size: 0.95rem;
+  }
+
+  .amz-btns {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  .amz-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    min-width: 150px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .amz-btn-primary {
+    background: #ff9900;
+    color: #111;
+  }
+
+  .amz-btn-secondary {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    color: #111;
+  }
+
+  .amz-close {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    cursor: pointer;
+  }
+
+  .amz-image-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 12px 0 0 0;
+  }
+
+  .amz-image-row img {
+    max-width: 150px;
+    width: 30%;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.2s;
+  }
+
+  .amz-image-row img.selected {
+    border: 2px solid #ff9900;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    #amz-overlay {
+      transform-origin: center;
+      animation: amz-pop .15s ease-out;
+    }
+    @keyframes amz-pop {
+      from { transform: scale(.97); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+  }
+</style>
+
+<div id="amz-overlay-backdrop" role="dialog" aria-modal="true" aria-labelledby="amz-title">
+  <div id="amz-overlay">
+    <button class="amz-close" aria-label="Close overlay">&times;</button>
+
+    <h2 id="amz-title">Would you like to visit our products?</h2>
+    <p>Select a product below or continue to the web app.</p>
+
+    <!-- Image row with selectable Amazon affiliate links -->
+    <div class="amz-image-row">
+      <img src="img/Heptaboard_Full-RealDartboard.jpg" alt="Heptaboard Full Dartboard"
+           data-link="https://www.amazon.de/dp/B0FN82SHW5?tag=dartsxl-21">
+      <img src="img/Heptaboard_Open-RealDartboard.jpg" alt="Heptaboard Open Dartboard"
+           data-link="https://www.amazon.de/dp/B0FN83N625?tag=dartsxl-21">
+      <img src="img/XLBoard-RealDartboard.jpg" alt="XLBoard Dartboard"
+           data-link="https://www.amazon.de/dp/B0FNNBS5Y1?tag=dartsxl-21">
+    </div>
+
+    <div class="amz-btns">
+      <a href="https://www.amazon.de/dp/B0FNNBS5Y1?tag=dartsxl-21" target="_blank" rel="noopener noreferrer"
+         class="amz-btn amz-btn-primary" id="amz-go-button">Go to Products</a>
+      <button class="amz-btn amz-btn-secondary" id="amz-continue">Continue</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var backdrop = document.getElementById('amz-overlay-backdrop');
+  var continueBtn = document.getElementById('amz-continue');
+  var closeBtn = document.querySelector('.amz-close');
+  var goButton = document.getElementById('amz-go-button');
+  var images = document.querySelectorAll('.amz-image-row img');
+  var lastFocus = null;
+  var selectedLink = goButton.href;
+
+  // Highlight selected image and update button
+  images.forEach(function(img){
+    img.addEventListener('click', function(){
+      images.forEach(i => i.classList.remove('selected'));
+      img.classList.add('selected');
+      selectedLink = img.dataset.link;
+      goButton.href = selectedLink;
+      goButton.textContent = "Go to " + img.alt;
+    });
+  });
+
+  // Overlay always visible
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      backdrop.style.display = 'flex';
+      lastFocus = document.activeElement;
+      continueBtn.focus();
+    },100);
+  });
+
+  function hideOverlay() {
+    backdrop.style.display = 'none';
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  continueBtn.addEventListener('click', hideOverlay);
+  closeBtn.addEventListener('click', hideOverlay);
+
+  backdrop.addEventListener('click', function(e){
+    if(e.target === backdrop) hideOverlay();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') hideOverlay();
+  });
+})();
+</script>
+
+
+
+  
+
+
+
+
+
+
   
   
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17762841975">
