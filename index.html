@@ -3,7 +3,6 @@
 
 
 
-
 <style>
   #amz-overlay-backdrop {
     position: fixed;
@@ -144,7 +143,7 @@
 
     <div class="amz-btns">
       <a href="https://www.amazon.de/dp/B0FNNBS5Y1?tag=dartsxl-21" target="_blank" rel="noopener noreferrer"
-         class="amz-btn amz-btn-primary" id="amz-go-button">Go to Products</a>
+         class="amz-btn amz-btn-primary" id="amz-go-button">Go to Products (Amazon)</a>
       <button class="amz-btn amz-btn-secondary" id="amz-continue">Continue</button>
     </div>
   </div>
@@ -167,7 +166,7 @@
       img.classList.add('selected');
       selectedLink = img.dataset.link;
       goButton.href = selectedLink;
-      goButton.textContent = "Go to " + img.alt;
+      goButton.textContent = "" + img.alt;
     });
   });
 
@@ -212,8 +211,6 @@
   });
 })();
 </script>
-
-  
 
 
 
