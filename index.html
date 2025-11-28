@@ -110,6 +110,19 @@
       to   { transform: scale(1); opacity: 1; }
     }
   }
+  #amz-overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: all; /* ensures it catches clicks */
+}
+  
+  
+  
 </style>
 
 <div id="amz-overlay-backdrop" role="dialog" aria-modal="true" aria-labelledby="amz-title">
@@ -167,25 +180,38 @@
     },100);
   });
 
-  function hideOverlay() {
+  function hideOverlay(e) {
     backdrop.style.display = 'none';
     if(lastFocus && lastFocus.focus) lastFocus.focus();
+	
+	e.stopPropagation();
+	e.preventDefault();
   }
 
-  continueBtn.addEventListener('click', hideOverlay);
-  closeBtn.addEventListener('click', hideOverlay);
-
-  backdrop.addEventListener('click', function(e){
-    if(e.target === backdrop) hideOverlay();
+  continueBtn.addEventListener('click', function(e){
+	  if(e.target === continueBtn){
+		hideOverlay(e);
+	  }
   });
+  closeBtn.addEventListener('click', function(e){
+	  if(e.target === closeBtn){
+		hideOverlay(e);
+	  }
+  });
+  
+	backdrop.addEventListener('click', function(e){
+	  if(e.target === backdrop){
+		hideOverlay(e);
+	  }
+	});
 
   document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') hideOverlay();
+    if(e.key === 'Escape'){
+		hideOverlay(e);
+	}
   });
 })();
 </script>
-
-
 
   
 
