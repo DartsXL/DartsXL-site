@@ -164,12 +164,14 @@
 
   // Highlight selected image and update button
   images.forEach(function(img){
-    img.addEventListener('click', function(){
+    img.addEventListener('click', function(e){
       images.forEach(i => i.classList.remove('selected'));
       img.classList.add('selected');
       selectedLink = img.dataset.link;
       goButton.href = selectedLink;
       goButton.textContent = "" + img.alt;
+		e.stopPropagation();
+		e.preventDefault();
     });
   });
 
@@ -216,7 +218,6 @@
 </script>
 
 
-	
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17762841975">
 </script>
 <script>
