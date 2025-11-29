@@ -2,317 +2,34 @@
 
 
 
-<style>
 
-#help-overlay-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.65); 
-  display: none; 
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-  pointer-events: all;
-}
-
-#help-overlay-content {
-    background: white;
-    position: relative;
-    max-width: 700px;
-    max-height: 80vh;
-	
-	
-    background-color: rgba(244,244,244,1);
-		
-	border: 2px solid #ccc;
-    border-radius: 12px;
-	
-	margin-left: 10px;
-	margin-right: 10px;
-
-	padding-bottom: 30px;
-	
-    display: flex;
-    flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-	
-	font-family: "Calibri";
-}
-
-.help-header {
-	width: 100%;
-    background-color: rgba(238,238,238,1);
-	border-bottom: 1px solid #ccc;
-	
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-	
-    position: relative;
-    display: flex;
-    flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-.help-header-text-cont{
-    display: flex;
-    flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	
-	margin-bottom: 13px;
-	margin-top: 13px;
-	
-	border-radius: 5px;
-	padding: 0px 9px;
-}
-.help-header-text {
-    font-family: "Verdana";
-    text-align: center;
-	font-weight: 600;
-    font-size: 26px;
-	color: black;
-}
+<link rel="stylesheet" href="pagesstyles.css">
 
 
-.help-content{
-	width: 100%;
-	
-    display: flex;
-	justify-content: flex-start;
-	align-items: center;
-    flex-direction: column;
-	
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-}
-
-
-.help-row-container {
-    width: 100%;
-	padding-left: 25px;
-	padding-right: 40px;
-    box-sizing: border-box;
-}
-
-.help-text-inner {
-	width: 100%;
-    padding: 10px 10px;
-    font-size: 16px;
-    line-height: 1.4;
-}
-
-.help-text-header {
-    padding-top: 20px;
-    font-weight: 600;
-    font-size: 17px;
-}
-
-.help-text-header.top {
-    padding-top: 15px;
-}
-
-.help-separator {
-	width: 100%;
-    border-bottom: 1px solid #ccdddd;
-}
-
-.help-close-container {
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.help-close-div {
-    background: transparent;
-    border: none;
-    font-size: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-	pointer-events: none;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-  #amz-overlay-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-	pointer-events: auto;
-  }
-
-  #amz-overlay {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    width: min(540px, 90%);
-    text-align: center;
-    position: relative;
-    font-family: system-ui, sans-serif;
-  }
-
-  #amz-overlay h2 {
-    margin: 0 0 10px;
-    font-size: 1.25rem;
-  }
-
-  #amz-overlay p {
-    margin: 0 0 16px;
-    color: #444;
-    font-size: 0.95rem;
-  }
-
-  .amz-btns {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 12px;
-  }
-
-  .amz-btn {
-    padding: 10px 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    min-width: 150px;
-    font-size: 0.95rem;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-  }
-
-  .amz-btn-primary {
-    background: #ff9900;
-    color: #111;
-  }
-
-  .amz-btn-secondary {
-    background: #f4f4f4;
-    border: 1px solid #ddd;
-    color: #111;
-  }
-
-  .amz-top-header{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	
-	width: 100%;
-  }
-  
-  .amz-close-container{
-    background: transparent;
-    border: none;
-    position: relative;
-    cursor: pointer;
-	pointer-events: auto;
-    cursor: pointer;
-  
-  }
-  .amz-close {
-    font-size: 1.5rem;
-	pointer-events: none;
-    background: transparent;
-    border: none;
-  }
-  
-  .amz-help-container{
-    background: transparent;
-    border: none;
-    position: relative;
-    cursor: pointer;
-	pointer-events: auto;
-  }
-  
-  .amz-help-btn{
-    background: transparent;
-	pointer-events: none;
-    font-size: 1.2rem;
-    border: none;
-  }
-
-  .amz-image-row {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 12px 0 0 0;
-  }
-
-  .amz-image-row img {
-    max-width: 150px;
-    width: 30%;
-    border-radius: 6px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: border 0.2s;
-  }
-
-  .amz-image-row img.selected {
-    border: 2px solid #ff9900;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    #amz-overlay {
-      transform-origin: center;
-      animation: amz-pop .15s ease-out;
-    }
-    @keyframes amz-pop {
-      from { transform: scale(.97); opacity: 0; }
-      to   { transform: scale(1); opacity: 1; }
-    }
-  }
-  
-  
-  
-</style>
 <div id="amz-overlay-backdrop" role="dialog" aria-modal="true" aria-labelledby="amz-title">
   <div id="amz-overlay">
-   <div class="amz-top-header">
-		<div class="amz-help-container" role="button" tabindex="0">
-			<button class="amz-help-btn" aria-label="Help / Information">&#63;</button> 
-		</div>
-  
-		<div class="amz-close-container" role="button" tabindex="0">
-			<button class="amz-close" aria-label="Close overlay">&times;</button>
-		</div>
+    <div class="amz-top-header">
+      <div class="amz-help-container" role="button" tabindex="0">
+        <button class="amz-help-btn" aria-label="Help / Information">&#63;</button> 
+      </div>
+      <div class="amz-close-container" role="button" tabindex="0">
+        <button class="amz-close" aria-label="Close overlay">&times;</button>
+      </div>
     </div>
-	
+    
     <h2 id="amz-title">Would you like to visit our products?</h2>
     <p>Select a product below or continue to the web app.</p>
 
     <div class="amz-image-row">
-      <img src="img/Heptaboard_Full-RealDartboard.jpg" alt="Heptaboard Full (Amazon)"
-           data-link="https://www.amazon.de/dp/B0FN82SHW5?tag=dartsxl-21">
-      <img src="img/Heptaboard_Open-RealDartboard.jpg" alt="Heptaboard Open (Amazon)"
-           data-link="https://www.amazon.de/dp/B0FN83N625?tag=dartsxl-21">
-      <img src="img/XLBoard-RealDartboard.jpg" alt="XLBoard (Amazon)"
-           data-link="https://www.amazon.de/dp/B0FNNBS5Y1?tag=dartsxl-21">
+      <div class="amz-image-container" data-link="https://www.amazon.de/dp/B0FN82SHW5?tag=dartsxl-21">
+        <img src="img/Heptaboard_Full-RealDartboard.jpg" alt="Heptaboard Full (Amazon)">
+      </div>
+      <div class="amz-image-container" data-link="https://www.amazon.de/dp/B0FN83N625?tag=dartsxl-21">
+        <img src="img/Heptaboard_Open-RealDartboard.jpg" alt="Heptaboard Open (Amazon)">
+      </div>
+      <div class="amz-image-container" data-link="https://www.amazon.de/dp/B0FNNBS5Y1?tag=dartsxl-21">
+        <img src="img/XLBoard-RealDartboard.jpg" alt="XLBoard (Amazon)">
+      </div>
     </div>
 
     <div class="amz-btns">
@@ -323,56 +40,53 @@
   </div>
 </div>
 
-<div id="help-overlay-backdrop" role="dialog" aria-modal="true" aria-labelledby="help-title">
-    <div id="help-overlay-content">
-
-		<div class="help-header">
-			<div class="help-header-text-cont">
-				<div class="help-header-text">
-					DartsXL Counter
-				</div>
-			</div>
-            <div class="help-close-container" role="button" tabindex="0">
-                <div class="help-close-div" aria-label="Close help">&times;</div>
-            </div>
-        </div>
-		
-		<div class="help-content">
-			<div class="help-row-container">
-				<div class="help-text-header top"> › Features Overview</div>
-			</div>
-			<div class="help-separator"></div>
-			<div class="help-row-container">
-				<div class="help-text-inner">DartsXL Counter is a free, no-download, dart counter web app for 501 darts rules with any score and any darts in hand.</div>
-			</div>
-			<div class="help-row-container">
-				<div class="help-text-inner">Score by placing darts or entering score. Get immediate checkout routes for any score.</div>
-			</div>
-			<div class="help-row-container">
-				<div class="help-text-inner">The app supports four dartboard layouts, including the classic dartboard and the DartsXL dartboards.</div>
-			</div>
-
-			 <div class="help-row-container">
-				<div class="help-text-header"> › Privacy & Data</div>
-			</div>
-			<div class="help-separator"></div>
-			<div class="help-row-container">
-				<div class="help-text-inner">We collect no personal data. The DartsXL Counter makes no networks calls. The app's only links go to Amazon, from the welcome prompt. Works on all devices.</div>
-			</div>
-			
-			 <div class="help-row-container">
-				<div class="help-text-header"> › Physical Products</div>
-			</div>
-			<div class="help-separator"></div>
-			<div class="help-row-container">
-				<div class="help-text-inner">The DartsXL dartboards XLBoard, Heptaboard Open and Heptaboard Full are available to purchase on Amazon.</div>
-			</div>
-			
+<div id="aboutcontainer-overlay-backdrop" role="dialog" aria-modal="true" aria-labelledby="about-title">
+  <div id="aboutcontainer-inner">
+    <div class="about-header">
+		<div class="about-header-text-cont">
+			<div class="about-header-text">DartsXL Counter</div>
+		</div>
+		<div class="about-header-logo-cont">
+			<img src="dartsXL-logo8-fixedTrim.png" class="about-header-logo-img">
+		</div>
+		<div class="about-close-container" role="button" tabindex="0">
+			<div class="about-close-div" aria-label="Close about">&times;</div>
 		</div>
     </div>
+    
+    <div class="about-navigation">
+      <div class="navigationAboutRow">
+		<div class="navigationAboutRowInner">
+			<div class="navigationAboutCont first active" data-page="about">
+			  <div class="navigationAboutText">About</div>
+			</div>
+			<div class="navigationAboutCont" data-page="features">
+			  <div class="navigationAboutText">Features</div>
+			</div>
+			<div class="navigationAboutCont" data-page="dartboards">
+			  <div class="navigationAboutText">Dartboards</div>
+			</div>
+			<div class="navigationAboutCont" data-page="privacy">
+			  <div class="navigationAboutText">Privacy</div>
+			</div>
+			<div class="navigationAboutCont" data-page="terms">
+			  <div class="navigationAboutText">Terms</div>
+			</div>
+			<div class="navigationAboutCont" data-page="contact">
+			  <div class="navigationAboutText">Contact</div>
+			</div>
+			<div class="navigationAboutCont last" data-page="sitemap">
+			  <div class="navigationAboutText">Sitemap</div>
+			</div>
+		</div>
+      </div>
+    </div>
+    
+    <div id="aboutcontainer-content">
+      <!-- Content will be loaded here dynamically -->
+    </div>
+  </div>
 </div>
-
-
 
 <script>
 (function () {
@@ -381,50 +95,118 @@
   const continueBtn = document.getElementById('amz-continue');
   const closeBtn = document.querySelector('.amz-close-container');
   const goButton = document.getElementById('amz-go-button');
-  const images = document.querySelectorAll('.amz-image-row img');
+  const imageContainers = document.querySelectorAll('.amz-image-container');
   var lastFocus = null;
-  const selectedLink = goButton.href;
+  var selectedLink = goButton.href;
 
-  const helpContent = document.getElementById('help-overlay-content');
-  const helpCont = document.querySelector('.amz-help-container');
-  const helpBackdrop = document.getElementById('help-overlay-backdrop');
-  const helpCloseCont = document.querySelector('.help-close-container');
+  const aboutBackdrop = document.getElementById('aboutcontainer-overlay-backdrop');
+  const aboutContent = document.getElementById('aboutcontainer-content');
+  const aboutCloseCont = document.querySelector('.about-close-container');
+  const aboutHelpCont = document.querySelector('.amz-help-container');
+  const navButtons = document.querySelectorAll('.navigationAboutCont');
 
+  const pageContent = {
+    about: '',
+    features: '',
+    dartboards: '',
+    privacy: '',
+    terms: '',
+    contact: '',
+    sitemap: ''
+  };
 
-  function showHelp(e) {
-    helpBackdrop.style.display = 'flex';
+  function loadPageFiles() {
+    var xhr;
+    var pages = ['about', 'features', 'dartboards', 'privacy', 'terms', 'contact', 'sitemap'];
+    for (var i = 0; i < pages.length; i++) {
+      xhr = new XMLHttpRequest();
+      xhr.open('GET', 'pages/' + pages[i] + '_page.html', false);
+      try {
+        xhr.send();
+        if (xhr.status === 200) {
+          pageContent[pages[i]] = xhr.responseText;
+        }
+      } catch(e) {
+        pageContent[pages[i]] = '<div style="padding: 20px;">Page not found</div>';
+      }
+    }
+  }
+
+  function showAbout(e) {
+    aboutBackdrop.style.display = 'flex';
+    loadPage('about');
+    if(e) {
       e.stopPropagation();
       e.preventDefault();
+    }
   }
-  function hideHelp(e) {
-    helpBackdrop.style.display = 'none';
+
+  function hideAbout(e) {
+    aboutBackdrop.style.display = 'none';
     if(e) {
       e.stopPropagation();
       e.preventDefault(); 
     }
   }
+
   function hideOverlay(e) {
     backdrop.style.display = 'none';
     if(lastFocus && lastFocus.focus) lastFocus.focus();
-	
-	e.stopPropagation();
-	e.preventDefault();
+    e.stopPropagation();
+    e.preventDefault();
   }
-  // Highlight selected image and update button
-  images.forEach(function(img){
-    img.addEventListener('click', function(e){
-      images.forEach(i => i.classList.remove('selected'));
-      img.classList.add('selected');
-      selectedLink = img.dataset.link;
+
+  function loadPage(pageName) {
+    aboutContent.innerHTML = pageContent[pageName] || '<div style="padding: 20px;">Page not found</div>';
+
+    navButtons.forEach(function(btn) {
+      btn.classList.remove('active');
+    });
+    var activeBtn = document.querySelector('[data-page="' + pageName + '"]');
+    if(activeBtn) activeBtn.classList.add('active');
+
+    if(pageName === 'sitemap') {
+      attachSitemapListeners();
+    }
+  }
+
+  function attachSitemapListeners() {
+    var sitemapLinks = aboutContent.querySelectorAll('.sitemap-link[data-page]');
+    sitemapLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var page = link.getAttribute('data-page');
+        loadPage(page);
+        e.preventDefault();
+      });
+    });
+  }
+
+  navButtons.forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      var page = btn.getAttribute('data-page');
+      loadPage(page);
+      e.stopPropagation();
+      e.preventDefault();
+    });
+  });
+
+  imageContainers.forEach(function(container){
+    container.addEventListener('click', function(e){
+      imageContainers.forEach(function(c) {
+        c.classList.remove('selected');
+      });
+      container.classList.add('selected');
+      selectedLink = container.getAttribute('data-link');
       goButton.href = selectedLink;
-      goButton.textContent = "" + img.alt;
+      var img = container.querySelector('img');
+      goButton.textContent = img ? img.alt : "Go to Products (Amazon)";
       e.stopPropagation();
       e.preventDefault(); 
     });
   });
 
-  // Overlay always visible
   window.addEventListener('load', function(){
+    loadPageFiles();
     setTimeout(function(){
       backdrop.style.display = 'flex';
       lastFocus = document.activeElement;
@@ -433,53 +215,60 @@
   });
 
   continueBtn.addEventListener('click', function(e){
-	  if(e.target === continueBtn){
-		hideOverlay(e);
-	  }
+    if(e.target === continueBtn){
+      hideOverlay(e);
+    }
   });
+
   closeBtn.addEventListener('click', function(e){
-		hideOverlay(e);
+    hideOverlay(e);
   });
   
-	backdrop.addEventListener('click', function(e){
-	  if(e.target === backdrop){
-		hideOverlay(e);
-	  }
-	});
+  backdrop.addEventListener('click', function(e){
+    if(e.target === backdrop){
+      hideOverlay(e);
+    }
+  });
 
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape'){
-		if(helpBackdrop.style.display === 'flex'){
-			hideHelp(e);
-		}
-		else if(backdrop.style.display !== 'none'){
-			hideOverlay(e);
-		}
-	}
+      if(aboutBackdrop.style.display === 'flex'){
+        hideAbout(e);
+      }
+      else if(backdrop.style.display !== 'none'){
+        hideOverlay(e);
+      }
+    }
   });
   
-	amzContent.addEventListener('click', function(e){
-		e.stopPropagation();
-		e.preventDefault(); 
-	});
-	
-	helpContent.addEventListener('click', function(e){
-		e.stopPropagation();
-		e.preventDefault(); 
-	});
+  amzContent.addEventListener('click', function(e){
+    e.stopPropagation();
+    e.preventDefault(); 
+  });
 
-	helpCont.addEventListener('click', function(e){
-		showHelp(e);
+  aboutHelpCont.addEventListener('click', function(e){
+    showAbout(e);
+  });
+  
+  aboutCloseCont.addEventListener('click', function(e){
+    hideAbout(e);
+  });
+
+  aboutBackdrop.addEventListener('click', function(e){
+    if(e.target === aboutBackdrop){
+      hideAbout(e);
+    }
+  });
+  
+  goButton.addEventListener('click', function(e) {
+	window.open(selectedLink, '_blank', 'noopener,noreferrer');
+	e.preventDefault();
+	e.stopPropagation();
 	});
   
-	helpCloseCont.addEventListener('click', function(e){
-		hideHelp(e);
-	});
-	helpBackdrop.addEventListener('click', function(e){
-		hideHelp(e);
-	});
 })();
 </script>
+
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17762841975">
