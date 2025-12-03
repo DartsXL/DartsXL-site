@@ -1,13 +1,10 @@
 <!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>DartsXL Counter – Dartcounter & Checkout Analyzer</title><link rel=canonical href="https://www.dartsxl.com/"><meta name=description content="DartsXL Counter is a free online dartcounter. It supports four dartboards and 501 rules with any score and any darts in hand. The DartsXL Counter includes an advanced checkout routes analyzer, that provides multiple instant checkout routes for any score. Online, no download, no data collection. Works on all devices."><meta name=keywords content="dartsxl, counter, dartcounter, checkoutroutes, free, online, darts, scoreboard, 501, any, score, xlboard, heptaboard"><meta property=og:title content="DartsXL: Free, No-Download Dart Counter"><meta property=og:description content="Dartcounter for 501/any score. Zero data collection, instant access. Check out the DartsXL physical boards on Amazon."><meta property=og:type content=website><meta property=og:url content="https://www.dartsxl.com/"><meta property=og:image content=img/preview.jpg><meta name=twitter:card content=summary_large_image><meta name=twitter:title content="DartsXL Counter: Online Scorer & Analyzer"><meta name=twitter:description content="Free online dart counter with advanced checkout routes mode. Supports 4 dartboards including XLBoard & Heptaboard."><meta name=twitter:image content=img/preview.jpg><link rel=stylesheet href=checkoutanalyzer/checkoutanalyzer.css><link rel=stylesheet href=dartcounterstyles.css><body><div id=dartboard-container class=dartboard-container></div><div id=acceptScoreButtonContainerDivDiv class=acceptScoreButtonContainerClass><div id=acceptTotalScoreButtonDiv class=acceptScoreButtonClass>OK</div></div><div class=analyzerStatic></div><div id=matchInterfaceContainerOuterDiv class=matchInterfaceContainerOuterClass></div><div id=checkoutInfoOuterDiv class=checkoutInfoOuterClass></div><div id=startScreenOuterDiv class=startScreenOuterClass></div><div id=informationMessageDivOuter class=informationMessageOuterClass></div><div id=playerActionsContainer class=playerActionsContainerClass></div><div id=promptContainer class=promptContainerClass></div><div id=statsContainerDiv class=statsContainerClass><div class=playerStatsTableContainer></div><div class=gameInfoTableContainer></div><div class=logoDivContainer><div class=logoNotTopClass><img src=dartsXL-logo8-fixedTrim.png class=logoImg></div></div></div><div id=boardInterfaceDiv class=boardsInterfaceClass><div class=board-container><div id=boardsTabsDiv class=boards-tabs></div><div class=logoDivContainer><div class=logoNotTopClass><img src=dartsXL-logo8-fixedTrim.png class=logoImg></div></div></div></div><div id=gameSettingsPopupDivOuter></div><div id=settingsMenuPopupDivOuter></div><div id=bottomInterfaceDiv class=bottomInterfaceClass><div id=missedDartEleDiv class=missedDart-section><input id=missedDartEle class=missedDartEleClass value=Miss readonly></div><div id=bottomAfterMissDiv class=bottomAfterMissClass><div class=currentScoreAndCurrentDarts><div class=thrownDartInputsContainer></div><div id=totalAndCurrentScoreDiv><div id=totalScoreSectionDiv class=totalscore-section><div id=totalScoreArrowCont class=totalScoreArrowCont><div class=totalScoreArrowRotated>➞</div></div><div id=totalScore class=totalScoreClass><div id=totalScoreInner>501</div></div><div class=averageScoreHolder><div class=averageScoreLeftCont><span class=averageScoreMu></span></div><div class=averageScoreMiddleCont><div id=averageScoreEle class=averageScoreClass>0</div></div><div class=averageScoreRightCont></div></div></div><div class=currentscore-section><div id=currentScore class=currentScoreClass><input id=currentScoreInner value=0></div></div></div></div><div id=checkoutRoutesContainerDivOuter class=checkoutRoutesContainerClassOuter><div id=checkoutRoutesContainerDiv class=checkoutRoutesContainerClass><div id=checkoutRouteButtonsContainer class=checkoutRouteButtonsContainerOuterClass>TEST!</div><div class=checkoutRoutesInnerContainer><div id=optimalCheckoutDivOuter class=optimalCheckoutClassOuter><div id=optimalCheckoutDiv class="singleCheckoutRouteClass optimal"></div></div><div id=alternateCheckoutRoutesDivOuter class=alternateCheckoutRoutesClassOuter><div id=alternateCheckoutRoutesDiv class=alternateCheckoutRoutesClass><div class=alternateCheckoutRoutesNavigationTextsClassOuter><div class=alternateCheckoutRoutesNavigationTextsClass></div></div></div></div></div></div></div></div></div><div class=everythingInterfaceDiv><div id=topLeftInterfaceDiv class=topLeftInterfaceClass><div class=topRowContainer><div class=logoAndSelectBoard-section><div class=logoTopDivContainer><div id=logoTopDiv class=logoTopDivClass><div class=logoTopInner><img src=dartsXL-logo8-fixedTrim.png class=logoImg></div></div></div><div id=selectBoardDivContainer class=selectBoardDivContainerClass></div></div><div class=tabsAndCheckout-section><div class=tabsContainerDivOuterClass><div id=tabsAndAddTabDiv><div id=tabsContainerDiv></div><div class=add-tab>+</div></div></div></div></div></div><div class=undoAndCheckout-section><div class=undo-section><div id=undoEle class=undoEleClass></div></div><div id=checkout-sectionDiv class=checkout-section><div id=checkoutsholding class=checkoutsContainerClass><div id=checkoutsDiv class=checkoutsDivClass></div></div><div id=statusMessageDivOuter></div></div></div></div><script type=text/javascript src=bundle.js></script>
 
-
-
-
 <link rel="stylesheet" href="pagesstyles.css">
 
-
-<div id="amz-overlay-backdrop" role="dialog" aria-modal="true" aria-labelledby="amz-title">
-  <div id="amz-overlay">
+<!-- New Starting Window -->
+<div id="new-start-overlay-backdrop" role="dialog" aria-modal="true" aria-labelledby="new-start-title" style="display: flex;">
+  <div id="new-start-overlay">
     <div class="amz-top-header">
       <div class="amz-help-container" role="button" tabindex="0">
         <button class="amz-help-btn" aria-label="Help / Information">&#63;</button> 
@@ -17,8 +14,32 @@
       </div>
     </div>
     
-    <h2 id="amz-title">Would you like to visit our products?</h2>
-    <p>Select a product below or continue to the web app.</p>
+    <div class="new-start-icons-row">
+      <div class="new-start-icon-parent">
+        <div class="new-start-icon-container" id="logo-container" role="button" tabindex="0">
+          <img src="/img/dartsxl-counter-icon.png" alt="DartsXL Logo">
+        </div>
+      </div>
+      <div class="new-start-icon-parent">
+        <div class="new-start-icon-container" id="dartboard-webwelcome-container" role="button" tabindex="0">
+          <img src="img/Heptaboard_Full-RealDartboard.jpg" alt="Dartboards">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Old Starting Screen (Modified) -->
+<div id="amz-overlay-backdrop" role="dialog" aria-modal="true" aria-labelledby="amz-title" style="z-index: 9999; display: none;">
+  <div id="amz-overlay">
+    <div class="amz-top-header">
+      <div class="amz-help-container" role="button" tabindex="0">
+        <button class="amz-help-btn" aria-label="Help / Information">&#63;</button> 
+      </div>
+      <div class="amz-close-container" role="button" tabindex="0">
+        <button class="amz-close" aria-label="Close overlay">&times;</button>
+      </div>
+    </div>
 
     <div class="amz-image-row">
       <div class="amz-image-container" data-link="https://www.amazon.de/dp/B0FN82SHW5?tag=dartsxl-21">
@@ -40,45 +61,46 @@
   </div>
 </div>
 
+<!-- About Container (Unchanged) -->
 <div id="aboutcontainer-overlay-backdrop" role="dialog" aria-modal="true" aria-labelledby="about-title">
   <div id="aboutcontainer-inner">
     <div class="about-header">
-		<div class="about-header-text-cont">
-			<div class="about-header-text">DartsXL Counter</div>
-		</div>
-		<div class="about-header-logo-cont">
-			<img src="dartsXL-logo8-fixedTrim.png" class="about-header-logo-img">
-		</div>
-		<div class="about-close-container" role="button" tabindex="0">
-			<div class="about-close-div" aria-label="Close about">&times;</div>
-		</div>
+      <div class="about-header-text-cont">
+        <div class="about-header-text">DartsXL Counter</div>
+      </div>
+      <div class="about-header-logo-cont">
+        <img src="dartsXL-logo8-fixedTrim.png" class="about-header-logo-img">
+      </div>
+      <div class="about-close-container" role="button" tabindex="0">
+        <div class="about-close-div" aria-label="Close about">&times;</div>
+      </div>
     </div>
     
     <div class="about-navigation">
       <div class="navigationAboutRow">
-		<div class="navigationAboutRowInner">
-			<div class="navigationAboutCont first active" data-page="about">
-			  <div class="navigationAboutText">About</div>
-			</div>
-			<div class="navigationAboutCont" data-page="features">
-			  <div class="navigationAboutText">Features</div>
-			</div>
-			<div class="navigationAboutCont" data-page="dartboards">
-			  <div class="navigationAboutText">Dartboards</div>
-			</div>
-			<div class="navigationAboutCont" data-page="privacy">
-			  <div class="navigationAboutText">Privacy</div>
-			</div>
-			<div class="navigationAboutCont" data-page="terms">
-			  <div class="navigationAboutText">Terms</div>
-			</div>
-			<div class="navigationAboutCont" data-page="contact">
-			  <div class="navigationAboutText">Contact</div>
-			</div>
-			<div class="navigationAboutCont last" data-page="sitemap">
-			  <div class="navigationAboutText">Sitemap</div>
-			</div>
-		</div>
+        <div class="navigationAboutRowInner">
+          <div class="navigationAboutCont first active" data-page="about">
+            <div class="navigationAboutText">About</div>
+          </div>
+          <div class="navigationAboutCont" data-page="features">
+            <div class="navigationAboutText">Features</div>
+          </div>
+          <div class="navigationAboutCont" data-page="dartboards">
+            <div class="navigationAboutText">Dartboards</div>
+          </div>
+          <div class="navigationAboutCont" data-page="privacy">
+            <div class="navigationAboutText">Privacy</div>
+          </div>
+          <div class="navigationAboutCont" data-page="terms">
+            <div class="navigationAboutText">Terms</div>
+          </div>
+          <div class="navigationAboutCont" data-page="contact">
+            <div class="navigationAboutText">Contact</div>
+          </div>
+          <div class="navigationAboutCont last" data-page="sitemap">
+            <div class="navigationAboutText">Sitemap</div>
+          </div>
+        </div>
       </div>
     </div>
     
@@ -88,12 +110,97 @@
   </div>
 </div>
 
+<style>
+/* New Starting Window Styles */
+#new-start-overlay-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+#new-start-overlay {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.new-start-icons-row {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.new-start-icon-parent {
+  flex: 0 0 auto;
+}
+
+.new-start-icon-container {
+  width: 400px;
+  height: 225px;
+  border: 3px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+}
+
+.new-start-icon-container:hover {
+  border-color: #ff6b35;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.new-start-icon-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .new-start-icons-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .new-start-icon-container {
+    width: 320px;
+    height: 180px;
+  }
+}
+</style>
+
 <script>
 (function () {
+  const newStartBackdrop = document.getElementById('new-start-overlay-backdrop');
+  const newStartContent = document.getElementById('new-start-overlay');
+  const logoContainer = document.getElementById('logo-container');
+  const dartboardWebwelcomeContainer = document.getElementById('dartboard-webwelcome-container');
+  const newStartCloseBtn = newStartContent.querySelector('.amz-close-container');
+  const newStartHelpBtn = newStartContent.querySelector('.amz-help-container');
+
   const backdrop = document.getElementById('amz-overlay-backdrop');
   const amzContent = document.getElementById('amz-overlay');
   const continueBtn = document.getElementById('amz-continue');
-  const closeBtn = document.querySelector('.amz-close-container');
+  const closeBtn = amzContent.querySelector('.amz-close-container');
+  const helpBtn = amzContent.querySelector('.amz-help-container');
   const goButton = document.getElementById('amz-go-button');
   const imageContainers = document.querySelectorAll('.amz-image-container');
   var lastFocus = null;
@@ -102,7 +209,6 @@
   const aboutBackdrop = document.getElementById('aboutcontainer-overlay-backdrop');
   const aboutContent = document.getElementById('aboutcontainer-content');
   const aboutCloseCont = document.querySelector('.about-close-container');
-  const aboutHelpCont = document.querySelector('.amz-help-container');
   const navButtons = document.querySelectorAll('.navigationAboutCont');
 
   const pageContent = {
@@ -132,6 +238,8 @@
     }
   }
 
+  loadPageFiles();
+
   function showAbout(e) {
     aboutBackdrop.style.display = 'flex';
     loadPage('about');
@@ -149,11 +257,31 @@
     }
   }
 
-  function hideOverlay(e) {
+  function hideNewStartOverlay(e) {
+    newStartBackdrop.style.display = 'none';
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+    if(e) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  }
+
+  function hideOldOverlay(e) {
     backdrop.style.display = 'none';
     if(lastFocus && lastFocus.focus) lastFocus.focus();
-    e.stopPropagation();
-    e.preventDefault();
+    if(e) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  }
+
+  function showOldOverlay(e) {
+    newStartBackdrop.style.display = 'none';
+    backdrop.style.display = 'flex';
+    if(e) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
   }
 
   function loadPage(pageName) {
@@ -205,40 +333,59 @@
     });
   });
 
-  window.addEventListener('load', function(){
-    loadPageFiles();
-    setTimeout(function(){
-      backdrop.style.display = 'flex';
-      lastFocus = document.activeElement;
-      continueBtn.focus();
-    },100);
+  // New Start Window Event Listeners
+  logoContainer.addEventListener('click', function(e) {
+    hideNewStartOverlay(e);
   });
 
+  dartboardWebwelcomeContainer.addEventListener('click', function(e) {
+    showOldOverlay(e);
+  });
+
+  dartboardWebwelcomeContainer.addEventListener('keydown', function(e) {
+    if(e.key === 'Enter' || e.key === ' ') {
+      showOldOverlay(e);
+    }
+  });
+
+  newStartCloseBtn.addEventListener('click', function(e) {
+    hideNewStartOverlay(e);
+  });
+
+  newStartHelpBtn.addEventListener('click', function(e) {
+    showAbout(e);
+  });
+
+  newStartBackdrop.addEventListener('click', function(e) {
+    if(e.target === newStartBackdrop) {
+      hideNewStartOverlay(e);
+    }
+  });
+
+  newStartContent.addEventListener('click', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+  });
+
+  // Old Overlay Event Listeners
   continueBtn.addEventListener('click', function(e){
     if(e.target === continueBtn){
-      hideOverlay(e);
+      hideOldOverlay(e);
     }
   });
 
   closeBtn.addEventListener('click', function(e){
-    hideOverlay(e);
+    hideOldOverlay(e);
   });
   
   backdrop.addEventListener('click', function(e){
     if(e.target === backdrop){
-      hideOverlay(e);
+      hideOldOverlay(e);
     }
   });
 
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape'){
-      if(aboutBackdrop.style.display === 'flex'){
-        hideAbout(e);
-      }
-      else if(backdrop.style.display !== 'none'){
-        hideOverlay(e);
-      }
-    }
+  helpBtn.addEventListener('click', function(e){
+    showAbout(e);
   });
   
   amzContent.addEventListener('click', function(e){
@@ -246,10 +393,7 @@
     e.preventDefault(); 
   });
 
-  aboutHelpCont.addEventListener('click', function(e){
-    showAbout(e);
-  });
-  
+  // About Event Listeners
   aboutCloseCont.addEventListener('click', function(e){
     hideAbout(e);
   });
@@ -261,17 +405,28 @@
   });
   
   goButton.addEventListener('click', function(e) {
-	window.open(selectedLink, '_blank', 'noopener,noreferrer');
-	e.preventDefault();
-	e.stopPropagation();
-	});
+    window.open(selectedLink, '_blank', 'noopener,noreferrer');
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  // Keyboard Navigation
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(aboutBackdrop.style.display === 'flex'){
+        hideAbout(e);
+      }
+      else if(newStartBackdrop.style.display === 'flex'){
+        hideNewStartOverlay(e);
+      }
+      else if(backdrop.style.display === 'flex'){
+        hideOldOverlay(e);
+      }
+    }
+  });
   
 })();
 </script>
-
-
-
-
 
 
 
