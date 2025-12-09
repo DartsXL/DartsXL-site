@@ -2,11 +2,8 @@
 
 
 
-
-
 <link rel="stylesheet" href="pagesstyles.css">
 
-<!-- New Starting Window -->
 <div id="new-start-overlay-backdrop" role="dialog" aria-modal="true" aria-labelledby="new-start-title" style="display: flex;">
   <div id="new-start-overlay">
     <div class="amz-top-header">
@@ -21,7 +18,7 @@
     <div class="new-start-icons-row">
       <div class="new-start-icon-parent">
         <div class="new-start-icon-container" id="logo-container" role="button" tabindex="0">
-          <img src="img/dartsxl-counter-icon.png" alt="DartsXL Logo">
+          <img src="/img/dartsxl-counter-icon.png" alt="DartsXL Logo">
         </div>
       </div>
       <div class="new-start-icon-parent">
@@ -33,7 +30,7 @@
   </div>
 </div>
 
-<!-- Old Starting Screen (Modified) -->
+
 <div id="amz-overlay-backdrop" role="dialog" aria-modal="true" aria-labelledby="amz-title" style="z-index: 9999; display: none;">
   <div id="amz-overlay">
     <div class="amz-top-header">
@@ -65,7 +62,6 @@
   </div>
 </div>
 
-<!-- About Container (Unchanged) -->
 <div id="aboutcontainer-overlay-backdrop" role="dialog" aria-modal="true" aria-labelledby="about-title">
   <div id="aboutcontainer-inner">
     <div class="about-header">
@@ -83,33 +79,81 @@
     <div class="about-navigation">
       <div class="navigationAboutRow">
         <div class="navigationAboutRowInner">
-          <div class="navigationAboutCont first active" data-page="about">
-            <div class="navigationAboutText">About</div>
-          </div>
-          <div class="navigationAboutCont" data-page="features">
-            <div class="navigationAboutText">Features</div>
-          </div>
-          <div class="navigationAboutCont" data-page="dartboards">
-            <div class="navigationAboutText">Dartboards</div>
-          </div>
-          <div class="navigationAboutCont" data-page="privacy">
-            <div class="navigationAboutText">Privacy</div>
-          </div>
-          <div class="navigationAboutCont" data-page="terms">
-            <div class="navigationAboutText">Terms</div>
-          </div>
+		  <div class="navAboutButtonOuter">
+            <div class="navigationAboutCont first active" data-page="about">
+              <div class="navigationAboutText">About</div>
+            </div>
+            <div class="navigationAboutContPlus first active" data-page="about">			  
+              <div class="navigationAboutTextPlus"><a href="pages/about_page.html" target="_blank" rel="noopener noreferrer" style="text-decoration:none">+</a></div>
+            </div>
+		  </div>
+		  
+		  <div class="navAboutButtonOuter">
+			<div class="navigationAboutCont" data-page="features">
+				<div class="navigationAboutText">Features</div>
+			</div>
+			<div class="navigationAboutContPlus first active" data-page="about">			  
+				<div class="navigationAboutTextPlus"><a href="pages/features_page.html" target="_blank" rel="noopener noreferrer" style="text-decoration:none">+</a></div>
+			</div>
+		  </div>
+		  
+		<div class="navAboutButtonOuter">
+			<div class="navigationAboutCont" data-page="dartboards">
+				<div class="navigationAboutText">Dartboards</div>
+			</div>
+
+			<div class="navigationAboutContPlus first active" data-page="about">			  
+				<div class="navigationAboutTextPlus"><a href="pages/dartboards_page.html" target="_blank" rel="noopener noreferrer" style="text-decoration:none">+</a></div>
+			</div>
+		</div>
+		  
+		  
+		<div class="navAboutButtonOuter">
+			<div class="navigationAboutCont" data-page="privacy">
+				<div class="navigationAboutText">Privacy</div>
+			</div>
+
+			<div class="navigationAboutContPlus first active" data-page="about">			  
+				<div class="navigationAboutTextPlus"><a href="pages/privacy_page.html" target="_blank" rel="noopener noreferrer" style="text-decoration:none">+</a></div>
+			</div>
+		</div>
+		  
+		<div class="navAboutButtonOuter">
+			<div class="navigationAboutCont" data-page="terms">
+				<div class="navigationAboutText">Terms</div>
+			</div>
+
+			<div class="navigationAboutContPlus first active" data-page="about">			  
+				<div class="navigationAboutTextPlus"><a href="pages/terms_page.html" target="_blank" rel="noopener noreferrer" style="text-decoration:none">+</a></div>
+			</div>
+		</div>
+		  
+		<div class="navAboutButtonOuter">
           <div class="navigationAboutCont" data-page="contact">
             <div class="navigationAboutText">Contact</div>
           </div>
+
+			<div class="navigationAboutContPlus first active" data-page="about">			  
+				<div class="navigationAboutTextPlus"><a href="pages/contact_page.html" target="_blank" rel="noopener noreferrer" style="text-decoration:none">+</a></div>
+			</div>
+		</div>
+		  
+		<div class="navAboutButtonOuter">
           <div class="navigationAboutCont last" data-page="sitemap">
             <div class="navigationAboutText">Sitemap</div>
           </div>
+
+			<div class="navigationAboutContPlus first active" data-page="about">			  
+				<div class="navigationAboutTextPlus"><a href="pages/sitemap_page.html" target="_blank" rel="noopener noreferrer" style="text-decoration:none">+</a></div>
+			</div>
+		</div>
+		  
         </div>
       </div>
     </div>
     
     <div id="aboutcontainer-content">
-      <!-- Content will be loaded here dynamically -->
+	
     </div>
   </div>
 </div>
@@ -446,6 +490,10 @@
 })();
 </script>
 
+
+
+
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -462,6 +510,8 @@
 </script>
 
 
+
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17762841975">
 </script>
 <script>
@@ -472,8 +522,4 @@
   gtag('config', 'AW-17762841975');
 </script>
 </body>
-
 </html>
-
-
-
