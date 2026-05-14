@@ -89,4 +89,4 @@ The DartsXL dartboards are physical sisal dartboards designed from scratch using
 - [Heptaboard Open](https://www.amazon.co.uk/DartsXL-Dartboard-Heptaboard-Sisal-Quads/dp/B0FN83N625) *(Amazon UK)*
 
 **XLBoard** — A classic round dartboard with the standard 20-segment layout, extended with a quad-scoring ring. Doubles, trebles and quads have custom proportions:
-- [XLBoard — Classic round board with quad-ring, custom ring proportions.](https://www.amazon.co.uk/DartsXL-Dartboard-XLBoard-Sisal-Quads/dp/B0FNNBS5Y1/) *(Amazon UK)*
+- [XLBoard](https://www.amazon.co.uk/DartsXL-Dartboard-XLBoard-Sisal-Quads/dp/B0FNNBS5Y1/) *(Amazon UK)*
